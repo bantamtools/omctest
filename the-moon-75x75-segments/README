@@ -1,0 +1,3 @@
+This is the gcode for the-moon-full.tap broken into 14 segments. Each segment will home before it starts, and do a 28.4 homing cycle when it finishs.
+
+This will show the drift error after the job has completed. TinyG config variables can be varied between each job to see how they effect the cut behavior.
