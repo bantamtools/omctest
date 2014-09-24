@@ -1,57 +1,15 @@
 #!/usr/bin/env python
 
 """
-Arc Buddy G-Code Generator
-Version 1.6
-Copyright (C) <2008>  <John Thornton>
+Modified from:
+   Arc Buddy G-Code Generator
+   Version 1.6
+   Copyright (C) <2008>  <John Thornton>
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-e-mail me any suggestions to "bjt 128 at gmail dot com"
-If you make money using this software
-you must donate $20 USD to a local food bank
-or the food police will get you! Think of others from time to time...
-
-To make it a menu item in Ubuntu use the Alacarte Menu Editor and add 
-the command python YourPathToThisFile/face.py
-make sure you have made the file execuatble by right
-clicking and selecting properties then Permissions and Execute
-
-To use with EMC2 see the instructions at: 
-http://wiki.linuxcnc.org/cgi-bin/emcinfo.pl?Simple_EMC_G-Code_Generators
-
-Inspired by Sebastian Jardi Estadella's addition to send the output to gEdit
-I've decided to incorporate it into Arc Buddy and make some additions that
-should make this program actually useful.
-
-The following instructions are for Ubuntu 10.04
-Open Gedit and navigate to Edit > Preferences > Plugins and check off
-External Tools to add them to your menu.
-Go to Tools > Manage External Tools and click on the page with a star in the
-lower left corner above the Help button. This adds a new Tool. Change the name
-of New Tool to something that makes sense to you like Arc Buddy and hit Enter
-to save the new name. Add a shortcut key if you like. Change Output: to 
-Insert at cursor position. In the Edit: box change line 1 to:
-python full/path/to/arcbuddy/arcbuddy.py
-
-Close the External Tools Manager and your ready to use Arc Buddy in Gedit
-after you close and reopen Gedit.
-
-When your creating G code in Gedit go to Tools > External Tools > Arc Buddy
-Add the required data and click Show Me to see or click Send to send the
-output to Gedit.
-
+Generates random arcs that lie within the bed dimensions for the Othermill. As
+many arcs as wanted can be generated and exported en masse to the clipboard, to
+be used as needed for testing purposes.  The idea is to generate a wide range
+of valid arcs in center and radius formats, both clockwise and widdershins.
 """
 
 from Tkinter import *
