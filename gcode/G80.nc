@@ -1,4 +1,5 @@
 (MSG@startTest - G80.nc)
+
 g90
 g10 l2 p6 x0 y0 z-60
 g59
@@ -18,7 +19,6 @@ g02 x25 i2
 g80
 x64 y64 z16
 g03 y25 j2
-
 
 (there should be no error codes from the arcs - if so it means we were in the wrong origin or a previous value carried over)
 (mill should be at x25 y25 z-59 in machine coords)

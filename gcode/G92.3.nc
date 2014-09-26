@@ -1,4 +1,5 @@
 (MSG@startTest - G92.3.nc)
+
 g10 l2 p6 x30 y30 z-30
 g10 l2 p5 x60 y60 z-35
 

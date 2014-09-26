@@ -1,4 +1,5 @@
 (MSG@startTest - G53.nc)
+
 (G53 should be modal and affect only the current line)
 (for all other lines, the current coordinate system should take effect)
 G10 L2 P1 x4 y4 y-4
@@ -36,6 +37,7 @@ g59
 g0 x0 y0 z0  
 g53 x0 y0 z0 
 g0 x10 y10 z-10  (x19 y19 z-19)
+
 (mill should be in g59)
 (mill should be at x19 y19 z-19)
 (MSG@finishTest - G53.nc)
