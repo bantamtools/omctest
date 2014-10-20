@@ -1,16 +1,8 @@
 (MSG@startTest - G02_radius.nc)
-f1000
-g10 l2 p2 x60 y60 z-30
-g55
+(f1000
+(g10 l2 p6 x60 y60 z-30
+(g59
 g00 x0 y0 z0 (starting point)
-
-x y z r
-x y r
-x z r
-x r
-y z r
-y r
-z r
 
 g17 (XY plane)
 g02 x4 y4 z4 r4 (x64 y64 z-26)
@@ -20,25 +12,23 @@ g02 x7 r1       (x67 y66 z-24)
 g02 y8 z8 r0.5  (x67 y68 z-22)
 g02 y9 r1       (x67 y69 z-22)
 
-x10 y10 z10 
+(not rendering correctly in Otherplan - bug or pebkac?)
 g18 (XZ plane)
-g02 x y z r
-g02 x y r
-g02 x z r
-g02 x r
-g02 y z r
-g02 z r
+g02 x3 y4 z4 r4 (x63 y64 z-26)
+g02 x5 y10 r1   (x65 y70 z-26)
+g02 x10 z-1 r5  (x70 y70 z-31)
+g02 x20 r5      (x80 y70 z-31)
+g02 y5 z8 r4.5  (x80 y65 z-22)
+g02 z12 r2      (x80 y65 z-18)
 
-x10 y10 z10 
 g19 (YZ plane)
-g02 x y z r
-g02 x y r
-g02 x z r
-g02 y z r
-g02 y r
-g02 z r
+g02 x4 y13 z4 r8  (x64 y73 z-26)
+g02 x30 y15 r1    (x90 y75 z-26)
+g02 x22 z-15 r9.5 (x82 y75 z-45)
+g02 y0 z-21.213 r21.213  (x82 y60 z-51.213)
+g02 y-4 r2        (x82 y56 z-51.213)
+g02 z0 r10.6065   (x82 y56 z-30)
 
-x10 y10 z10
-(should get back something like {"r":{},"f":[1,70,20,3678]} - one per command in error)
-(mill should still be at x10 y10 z10)
+(no error codes should be returned in footers)
+(mill should be at x82 y56 z-30 in machine coords)
 (MSG@finishTest - G02_radius.nc)

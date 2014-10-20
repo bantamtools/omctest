@@ -3,7 +3,7 @@
 g10 l2 p6 x35 y35 z-35 (set g59 offet)
 g59 (switch to g59)
 g00 x0 y0 z0 
-g92 x10 y10 z10 (offset should put g55 origin at x25 y25 z-45)
+g92 x10 y10 z10 (offset should put g59 origin at x25 y25 z-45)
 g18 (change to xz plane)
 g91 (change to incremental distance mode)
 g93 (change to inverse time feed rate)
