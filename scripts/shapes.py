@@ -2,6 +2,7 @@
 
 from Tkinter import *
 from math import *
+from bitarray import bitarray
 
 class Point:
    def __init__(self, x=0, y=0):
@@ -14,6 +15,7 @@ class Shapes(Frame):
       self.initialize()
       self.createUI()
       self.grid(sticky=N+S+E+W)
+      self.intersectionGCode = ''
 
 
    def initialize(self):
@@ -87,6 +89,7 @@ class Shapes(Frame):
 
 
    def drawShape(self):
+      self.intersectionGCode = ''
       self.canvas.delete(ALL)
       self.scaleDimension = max(self.shapeWidth, self.shapeHeight)
       self.scaleFactor = self.canvasWidth / (self.scaleDimension + 1)
@@ -108,6 +111,7 @@ class Shapes(Frame):
 
    
    def deleteAll(self):
+      self.intersectionGCode = ''
       self.canvas.delete(ALL)
       self.points = []
       self.intersectionsDrawn = False
@@ -129,14 +133,50 @@ class Shapes(Frame):
          self.clipboard_append('G04 P.5\n')
          self.clipboard_append('G01 Z-0.2 F70\n')
          self.clipboard_append(self.gcode + '\n')
+         self.clipboard_append('G00 Z1\n')
+      
+         # also export intersections if they were selected
+         if (self.intersectionsShown.get()):
+            self.clipboard_append(self.getGcodeForIntersections())
+
          self.clipboard_append('G00 Z10\n')
          self.clipboard_append('M30\n')
 
 
-   #def deleteLast(self):
-   #   for id in previousShapeIds:
-   #      self.canvas.delete(id)
+   def getGcodeForIntersections(self):
+      numConnections = self.numSides.get() - 3
+      print "num connections: ", numConnections
+      numInternalLines = (numConnections * (numConnections + 1)) / 2 + numConnections
+      print "num internal lines to be drawn: ", numInternalLines
 
+      # if there are an even number of sides for this shape, one exterior line will need to be drawn twice for the algorithm to work
+      if self.numSides.get() / 2 == 0:
+         numInternalLines += 1
+
+      gcode = ''
+      startPoint = 2
+      x = 2
+      y = 0
+      verticalMove = True
+      gcode += 'G00 Z1\n'
+      gcode += 'G00 X%.3f Y%.3f\n' %(self.points[2].x, self.points[2].y)
+      gcode += 'G01 Z-0.2 F70\n'
+      for i in range(numInternalLines):
+          if verticalMove:
+             gcode += 'G01 F700 X%.3f Y%.3f\n' %(self.points[y].x, self.points[y].y)
+             x += 1
+             if (x >= self.numSides.get()):
+                x = startPoint + 2
+                y = 0 
+                startPoint += 2
+                verticalMove = True 
+                continue
+          else:
+             gcode += 'G01 F700 X%.3f Y%.3f\n' %(self.points[x].x, self.points[x].y)
+             y += 1
+          verticalMove = not verticalMove
+          numInternalLines += 1
+      return gcode
 
    def intersectionsClicked(self):
       if self.intersectionsDrawn == False:
