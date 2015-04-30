@@ -1,0 +1,40 @@
+%FSLAX22Y22*%
+%MOMM*%
+%ADD11C,0.14*%
+D11*
+G01*
+G04 First level: big square - dark polarity*
+%LPD*%
+G36*
+X25Y25D02*
+X175D01*
+Y175D01*
+X25D01*
+Y25D01*
+G37*
+G04 Second level: big circle - clear polarity*
+%LPC*%
+G36*
+G75*
+X50Y100D02*
+G03*
+X50Y100I50J0D01*
+G37*
+G04 Third level: small square - dark polarity*
+%LPD*%
+G36*
+X75Y75D02*
+X125D01*
+Y125D01*
+X75D01*
+Y75D01*
+G37*
+G04 Fourth level: small circle - clear polarity*
+%LPC*%
+G36*
+G75*
+X115Y100D02*
+G03*
+X115Y100I25J0D01*
+G37*
+M02*

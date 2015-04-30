@@ -1,0 +1,142 @@
+{
+  "showDimensions" : true,
+  "displayUnits" : "mm",
+  "stepSize" : 1,
+  "showMotionPlan" : true,
+  "currentJobUUID" : null,
+  "stock" : {
+    "height" : 50,
+    "depth" : 1,
+    "laminate" : "211D8AAC-F38A-48CA-B692-7004D3222719",
+    "offset" : {
+      "y" : 10,
+      "b" : 0,
+      "z" : 10,
+      "x" : 10,
+      "c" : 0
+    },
+    "width" : 50,
+    "name" : "(unknown)",
+    "zrotation" : 0
+  },
+  "tools" : [
+    {
+      "group" : "Endmill",
+      "name" : "1\/8in Flat Endmill",
+      "profile" : [
+        [
+          3.175,
+          38.57,
+          0,
+          0
+        ],
+        [
+          3.175,
+          16,
+          0,
+          -1
+        ],
+        [
+          3.175,
+          13,
+          0,
+          1
+        ],
+        [
+          3.175,
+          0,
+          0,
+          1
+        ]
+      ],
+      "uuid" : "B5D88C4F-4FA2-4D0A-B6C2-1485F3CAB73B"
+    },
+    {
+      "group" : "Endmill",
+      "name" : "1\/16in Flat Endmill",
+      "profile" : [
+        [
+          3.175,
+          36.5,
+          0,
+          0
+        ],
+        [
+          3.175,
+          9.5,
+          0,
+          -1
+        ],
+        [
+          1.5875,
+          3.175,
+          0,
+          1
+        ],
+        [
+          1.5875,
+          0,
+          0,
+          1
+        ]
+      ],
+      "uuid" : "3FE64A6F-BFBC-4E48-8D48-9D7195783FDC"
+    },
+    {
+      "group" : "Endmill",
+      "name" : "1\/100in Flat Endmill",
+      "profile" : [
+        [
+          3.175,
+          36.5,
+          0,
+          0
+        ],
+        [
+          3.175,
+          9.5,
+          0,
+          -1
+        ],
+        [
+          0.254,
+          0.508,
+          0,
+          1
+        ],
+        [
+          0.254,
+          0,
+          0,
+          1
+        ]
+      ],
+      "uuid" : "2C4EDDEC-5D07-40F2-B11C-B21DCCC24887"
+    }
+  ],
+  "version" : 1,
+  "plans" : [
+    "A1DE46C1-7CA1-4438-A216-19B2BFEEDE03",
+    "B1F52CD2-2855-4B6A-83A8-0F130E2ADE5F"
+  ],
+  "laminates" : [
+    {
+      "uuid" : "211D8AAC-F38A-48CA-B692-7004D3222719",
+      "group" : "PCB Board",
+      "maxDepth" : 1.8,
+      "name" : "Single Sided FR1 L2",
+      "minDepth" : 1,
+      "layers" : [
+        {
+          "fixed" : 0.1,
+          "material" : "copper"
+        },
+        {
+          "float" : 1.44,
+          "material" : "phenolic"
+        }
+      ]
+    }
+  ],
+  "snapOnDrag" : true
+}

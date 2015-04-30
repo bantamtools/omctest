@@ -1,0 +1,4 @@
+G04 only 2 sides - invalid aperture *
+%ADD39P,6X2*%      
+G04 more than 12 sides - invalid aperture *
+%ADD40P,6X13*%

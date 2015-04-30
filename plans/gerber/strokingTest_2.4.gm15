@@ -1,0 +1,34 @@
+%MOIN*%
+%FSLAX34Y34*%
+%ADD10C,0.000*%
+
+G04 Testing the use of zero size circular apertures *
+G04 From Gerber spec section 2.4: *
+G04 "A zero size circular aperture can be used for stroking. They create graphic objects without *
+G04 image, which can be used to transfer non-image information, e.g. an outline."
+G04 *
+G04 ... and also reference section 4.10.2 - Zero-size apertures *
+
+G01*
+D10*
+X5000Y0D02*
+X35000D01*
+X37500Y2500D01*
+Y27500D01*
+X35000Y30000D01*
+X32500Y27500D01*
+X30000Y30000D01*
+X27500Y27500D01*
+X25000Y30000D01*
+X22500Y27500D01*
+X20000Y30000D01*
+X17500Y27500D01*
+X15000Y30000D01*
+X12500Y27500D01*
+X10000Y30000D01*
+X7500Y27500D01*
+X5000Y30000D01*
+X2500Y27500D01*
+Y2500D01*
+X5000Y0D01*
+M02*

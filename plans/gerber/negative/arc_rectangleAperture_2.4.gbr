@@ -1,0 +1,23 @@
+%MOIN*%
+%FSLAX34Y34*%
+%ADD11R,0.0960X0.0960*%
+
+G04 From Gerber spec, section 2.4: "An arc segment cannot be stroked with a rectangle."*
+G04 Otherplan should give user an error: "The top layer failed to load: Tried to stroke arc with invalid rectangular aperture 11."*
+
+D11*
+G01*
+X10000Y2000D03*
+X10000Y5000D02*
+Y21000D01*
+X30000D01*
+
+G03*
+G74*
+X32500Y23500J2500*
+X30000Y26000I-2500*
+G75* 
+
+G02*
+X25000Y21000J-5000*
+M02*
