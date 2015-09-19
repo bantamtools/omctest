@@ -64,12 +64,12 @@ fig = plt.figure()
 ax1 = fig.add_subplot(111)
 
 ax1.set_title("read behavior (" + fileName + ")")    
-ax1.set_xlabel('timestamp (ms)') 
-ax1.set_ylabel('time elapsed (ns)')
+ax1.set_xlabel('time it occurred (ms)') 
+ax1.set_ylabel('event duration (ns)')
 
 noDataLine, = ax1.plot(xRead0, yRead0, 'r+', label='read duration (no data)')
 dataLine, = ax1.plot(xRead1, yRead1, 'g+', label='read duration (some data)')
-writeLine, = ax1.plot(xWrite, yWrite, 'bx', label='write duration')
+writeLine, = ax1.plot(xWrite, yWrite, 'b.', label='write duration')
 
 leg = ax1.legend(fancybox=True, shadow=True, markerscale=1.2, loc=2)
 leg.get_frame().set_alpha(0.2)
