@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: DBAVR.PcbDoc   1/01/2010  11:36:21 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : DBAVR.TXT
+EIA File   : DBAVR.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.5mm (19.685mil)        Round          11               49.71 mm (1.96 Inch)
+T2        0.8mm (31.496mil)        Round          38               143.13 mm (5.63 Inch)
+T3        1.2mm (47.244mil)        Round          4                15.00 mm (0.59 Inch)
+T4        3mm (118.11mil)          Round          4                98.40 mm (3.87 Inch)
+---------------------------------------------------------------------------
+Totals                                            57               306.23 mm (12.06 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:01
