@@ -1,26 +1,32 @@
 /* 
  *
- *  dtrace script to profile ftdi read and write behavior
+ *  dtrace script to profile usb read and write behavior
  *
  *  % sudo dtrace -s readTime.d <process ID>
  *
  */
+/*
 pid$1::QIODevice??readyRead():entry
 {
     self->lastReadyRead = timestamp;
     printf("ReadyRead signal sent");
 } 
+*/
 
 pid$1::QIODevice??readAll():entry
 {
     self->lastReadStart = timestamp;
 } 
 
+/*
 pid$1::QIODevice??bytesWritten*:entry
 {
     printf("bytes written: %li", arg1);
 } 
+*/
 
+/* Print out how much data was read and how long it was since the call to 
+   readAll */
 pid$1::*dtraceReadEnd*:entry
 /self->lastReadStart/
 {
@@ -35,6 +41,8 @@ pid$1::QIODevice??write*:entry
     printf("sendingToMill: %s\n", copyinstr(arg1));
 } 
 
+/* Print out how much data was read, which channel it was sent on and how long 
+   it was since the call to QIODevice::write  */
 pid$1::*dtraceWriteEnd*:entry
 /self->lastWriteStart/
 {
